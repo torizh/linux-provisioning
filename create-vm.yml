@@ -10,7 +10,7 @@
         executable: /bin/bash
 
     - name: create proxmox vm
-      proxmox_kvm:
+      community.general.proxmox_kvm:
         api_user: root@pam
         api_password: ee5iTurb0
         api_host: pve.home.local
