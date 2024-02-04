@@ -1,0 +1,19 @@
+---
+- name: create proxmox vm
+  hosts: pve.home.local
+  gather_facts: no
+  tasks:
+    - name: activate proxenv venv
+      ansible.builtin.shell: source /root/proxenv/bin/activate
+      become: true
+      args:
+        executable: /bin/bash
+
+    - name: create proxmox vm
+      proxmox_kvm:
+        api_user: root@pam
+        api_password: ee5iTurb0
+        api_host: pve.home.local
+        name: test
+        node: pve
+
